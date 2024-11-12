@@ -3,6 +3,7 @@ import React from "react";
 import {MovementVm} from "./movement-list.vm"
 import classes from "./movement-list.page.module.css";
 import { useAccountDataContext } from "@/core/profile/account.context";
+import {MovementListTableComponent} from "./components/movement-list-table.component"
 
 const movementsMock = [
   {
@@ -59,6 +60,9 @@ export const MovementListPage: React.FC = () => {
           <span>Alias: Gastos mes</span>
           <span>IBAN: {iban}</span>
         </div>
+        <MovementListTableComponent
+        movementList={movementList}></MovementListTableComponent>
+
 
       </div>
     </AppLayout>
