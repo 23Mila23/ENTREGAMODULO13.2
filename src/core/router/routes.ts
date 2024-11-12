@@ -1,7 +1,8 @@
 
 export const routesPrefixes = {
     accountList: "/account-list",
-    transfer: "/transfer"
+    transfer: "/transfer",
+    movements : "/movements"
     }
 
 export const appRoutes = {
