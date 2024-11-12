@@ -13,6 +13,7 @@ export const AccountListPage: React.FC = () => {
       setAccountList(mapAccountListFromApiToVm(result))
     );
   }, []);
+  
   return (
     <AppLayout>
       <div className={classes.root}>

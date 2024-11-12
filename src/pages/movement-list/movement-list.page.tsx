@@ -2,6 +2,7 @@ import { AppLayout } from "@/layaouts";
 import React from "react";
 import {MovementVm} from "./movement-list.vm"
 import classes from "./movement-list.page.module.css";
+import { useAccountDataContext } from "@/core/profile/account.context";
 
 const movementsMock = [
   {
@@ -44,22 +45,22 @@ const movementsMock = [
 
 export const MovementListPage: React.FC = () => {
   const [movementList] = React.useState<MovementVm[]>(movementsMock);
+  const {iban, saldo} = useAccountDataContext();
+  
 
   return (
     <AppLayout>
       <div className={classes.root}>
         <div className={classes.headerContainer}>
           <h1>Saldos y Últimos movimientos</h1>
-          <span> Saldo disponible : {movementList[0].balance}€</span>
+          <span> Saldo disponible : {saldo}€</span>
         </div>
         <div className={classes.headerContainer2}>
           <span>Alias: Gastos mes</span>
-          <span>IBAN: XXXX XXXX XXXX XXXX XXXX XXXX</span>
+          <span>IBAN: {iban}</span>
         </div>
 
       </div>
-
-
     </AppLayout>
   );
 };
