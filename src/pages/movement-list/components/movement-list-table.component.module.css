@@ -17,5 +17,5 @@
     background-color: var(--table-header-background-color);
     font-size: var(--table-header-font-size);
     font-weight: var(--table-header-font-weight);
-
+    align-self: center;
 }
