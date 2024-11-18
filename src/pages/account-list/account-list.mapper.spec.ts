@@ -5,6 +5,14 @@ describe("pages/account-list/account-list.mapper specs", () => {
   describe("mapAccountListFromApiToVm", () => {
     it("should return empty array when it feeds empty array", () => {
       // Arrange
+      const accountList: apiModel.AccountApiModel[] = [];
+      // Act
+      const result = mapAccountListFromApiToVm(accountList);
+      // Assert
+      expect(result).toEqual([]);
+    });
+    it("Should return the same array but using VM model structure", () => {
+      // Arrange
       const accountList: apiModel.AccountApiModel[] = [
         {
           id: "1",
