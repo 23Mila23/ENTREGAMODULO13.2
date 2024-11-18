@@ -23,7 +23,7 @@ export const MovementListTableComponent: React.FC<Props> = (props) => {
 
           {movementList.map((movement) => (
             <MovementListItemComponent
-              key={movement.accountId}
+              key={movement.id}
               movementItem={movement}
             />
           ))}
