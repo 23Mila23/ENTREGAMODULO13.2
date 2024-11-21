@@ -108,5 +108,50 @@
       "accountId": "3"
     }
   ],
-  "transfer": []
+  "transfer": [
+    {
+      "accountId": "2",
+      "iban": "ES6621000418401234567891",
+      "name": "Mila",
+      "amount": "200",
+      "concept": "Compra del mes",
+      "notes": "",
+      "transferDate": "Wed Nov 20 2024",
+      "realTransferDate": "",
+      "id": 1
+    },
+    {
+      "accountId": "2",
+      "iban": "ES6621000418401234567891",
+      "name": "Mila",
+      "amount": "200",
+      "concept": "Compra del mes",
+      "notes": "",
+      "transferDate": "Wed Nov 20 2024",
+      "realTransferDate": "",
+      "id": 2
+    },
+    {
+      "accountId": "3",
+      "iban": "ES6621000418401234567891",
+      "name": "Mila",
+      "amount": "500",
+      "concept": "Alquiler",
+      "notes": "",
+      "transferDate": "Wed Nov 20 2024",
+      "realTransferDate": "",
+      "id": 3
+    },
+    {
+      "accountId": "3",
+      "iban": "ES6621000418401234567891",
+      "name": "Mila",
+      "amount": "500",
+      "concept": "Alquiler",
+      "notes": "",
+      "transferDate": "Wed Nov 20 2024",
+      "realTransferDate": "",
+      "id": 4
+    }
+  ]
 }

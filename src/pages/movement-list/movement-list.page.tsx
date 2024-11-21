@@ -11,7 +11,7 @@ export const MovementListPage: React.FC = () => {
   const [movementList, setMovementList] = React.useState<MovementVm[]>([]);
   const { iban, saldo, accountId } = useAccountDataContext();
   React.useEffect(() => {
-    accountId && getMovements(accountId).then((result) =>
+    getMovements(accountId).then((result) =>
       setMovementList(mapMovementListFromApiToVm(result))
     );
   }, []);

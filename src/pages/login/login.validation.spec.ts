@@ -1,3 +1,4 @@
+import { REQUIRED_FIELD_MESSAGE } from "@/common/validations/validation.const";
 import { validateForm } from "./login.validation"
 import { Credentials } from "./login.vm"
 
@@ -32,7 +33,7 @@ const credentials : Credentials = {
         //Assert
 
         expect(result.succeded).toBeFalsy();
-        expect(result.errors.user).toEqual("Debe introducir un usuario");
+        expect(result.errors.user).toEqual(REQUIRED_FIELD_MESSAGE);
         expect(result.errors.password).toEqual("");
     });
 
@@ -50,7 +51,7 @@ const credentials : Credentials = {
 
         expect(result.succeded).toBeFalsy();
         expect(result.errors.user).toEqual("");
-        expect(result.errors.password).toEqual("Debe introducir una contraseña");
+        expect(result.errors.password).toEqual(REQUIRED_FIELD_MESSAGE);
     });
 
     it("Should return validation failed when user and password are empty", () => {
@@ -66,7 +67,7 @@ const credentials : Credentials = {
         //Assert
 
         expect(result.succeded).toBeFalsy();
-        expect(result.errors.user).toEqual("Debe introducir un usuario");
-        expect(result.errors.password).toEqual("Debe introducir una contraseña");
+        expect(result.errors.user).toEqual(REQUIRED_FIELD_MESSAGE);
+        expect(result.errors.password).toEqual(REQUIRED_FIELD_MESSAGE);
     });
 })
