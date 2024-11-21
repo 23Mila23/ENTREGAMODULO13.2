@@ -17,7 +17,13 @@ const accountTypes = [
   },
 ];
 
-export const NewAccountFormComponent: React.FC = () => {
+interface Props {
+  handleNewAccount: (newAccount: Account) => void;
+}
+
+export const NewAccountFormComponent: React.FC<Props> = (props) => {
+  const { handleNewAccount } = props;
+
   const [account, setAccount] = React.useState<Account>(createEmptyAccount());
 
   const handleOnChange = (
@@ -31,9 +37,14 @@ export const NewAccountFormComponent: React.FC = () => {
     });
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleNewAccount(account);
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className={classes.formContainer}>
           <div>
             <label>Tipo de cuenta: </label>
@@ -54,7 +65,11 @@ export const NewAccountFormComponent: React.FC = () => {
           </div>
           <div>
             <label>Alias: </label>
-            <input name="name" className={classes.alias} />
+            <input
+              name="name"
+              className={classes.alias}
+              onChange={handleOnChange}
+            />
           </div>
         </div>
         <button type="submit" className={classes.button}>
