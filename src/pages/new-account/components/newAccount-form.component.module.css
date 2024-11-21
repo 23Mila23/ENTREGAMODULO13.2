@@ -1,0 +1,29 @@
+.form-container {
+  border: none;
+  border-bottom: 3px solid var(--table-header-background-color);
+  padding: 40px 0;
+}
+
+.form-container div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.form-container label {
+  margin-right: 20px;
+  min-width: 300px;
+  text-align: right;
+}
+
+.type-select {
+  width: 200px;
+}
+.alias {
+  width: 175px;
+}
+
+.button {
+  margin: 10px 0 10px 320px;
+}

@@ -1,4 +1,5 @@
 import { Account } from "../newAccount.vm";
+import classes from "./newAccount-form.component.module.css"
 
 interface Props {
   account: Account;
@@ -9,10 +10,10 @@ export const NewAccountFormComponent: React.FC<Props> = (props) => {
   return (
     <div>
       <form>
-        <div>
+        <div className={classes.formContainer}>
           <div>
             <label>Tipo de cuenta: </label>
-            <select>
+            <select className={classes.typeSelect}>
               <option key={account.type} value={account.type}>
                 {account.type}
               </option>
@@ -20,10 +21,10 @@ export const NewAccountFormComponent: React.FC<Props> = (props) => {
           </div>
           <div>
             <label>Alias: </label>
-            <input></input>
+            <input className={classes.alias}></input>
           </div>
         </div>
-        <button type="submit">GUARDAR</button>
+        <button type="submit" className={classes.button}>GUARDAR</button>
       </form>
     </div>
   );
