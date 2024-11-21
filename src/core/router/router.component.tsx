@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { AccountListPage, AccountPage, LoginPage, MovementListPage, NewAccount, TransferPage } from "@/pages"
+import { AccountListPage, AccountPage, LoginPage, MovementListPage, TransferPage, NewAccount } from "@/pages"
 import { appRoutes } from "./routes"
 
 export const Router = () => {

@@ -1,1 +1,1 @@
-export * from "./new.account"
+export * from "./newAccount.page"
