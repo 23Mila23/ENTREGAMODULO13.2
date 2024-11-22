@@ -17,6 +17,10 @@ export const AccountListPage: React.FC = () => {
     );
   }, []);
 
+  React.useEffect(() => {
+    console.log("cargado")
+  }, [accountList]);
+
   const navigate = useNavigate();
 
   const handleButtonOnClick = () => {
