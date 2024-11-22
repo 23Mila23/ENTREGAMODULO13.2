@@ -1,5 +1,6 @@
 import {
   buildRequiredFieldValidationFailedResponse,
+  buildValidationFailedResult,
   buildValidationSuccededResult,
   isStringValueInformed,
 } from "@/common/validations";
@@ -33,7 +34,7 @@ export const validateAccountAliasField = async (
   });
 
   if (accountsAlreadyCreated) {
-    return buildRequiredFieldValidationFailedResponse();
+    return buildValidationFailedResult("La cuenta ya existe");
   }
 
   return buildValidationSuccededResult();

@@ -1,6 +1,12 @@
 import React from "react";
-import { Account, createEmptyAccount } from "../newAccount.vm";
+import {
+  Account,
+  AccountError,
+  createEmptyAccount,
+  createEmptyAccountError,
+} from "../newAccount.vm";
 import classes from "./newAccount-form.component.module.css";
+import { validateNewAccountForm } from "../validations/newAccount-form.validation";
 
 const accountTypes = [
   {
@@ -26,6 +32,10 @@ export const NewAccountFormComponent: React.FC<Props> = (props) => {
 
   const [account, setAccount] = React.useState<Account>(createEmptyAccount());
 
+  const [errors, setErrors] = React.useState<AccountError>(
+    createEmptyAccountError()
+  );
+
   const handleOnChange = (
     e:
       | React.ChangeEvent<HTMLSelectElement>
@@ -37,9 +47,13 @@ export const NewAccountFormComponent: React.FC<Props> = (props) => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleNewAccount(account);
+    const formValidationResult = await validateNewAccountForm(account);
+    setErrors(formValidationResult.errors);
+    if (formValidationResult.succeded) {
+      handleNewAccount(account);
+    }
   };
 
   return (
@@ -62,6 +76,7 @@ export const NewAccountFormComponent: React.FC<Props> = (props) => {
                 );
               })}
             </select>
+            <p className={classes.error}>{errors.type}</p>
           </div>
           <div>
             <label>Alias: </label>
@@ -70,6 +85,7 @@ export const NewAccountFormComponent: React.FC<Props> = (props) => {
               className={classes.alias}
               onChange={handleOnChange}
             />
+            <p className={classes.error}>{errors.name}</p>
           </div>
         </div>
         <button type="submit" className={classes.button}>

@@ -27,3 +27,9 @@
 .button {
   margin: 10px 0 10px 320px;
 }
+
+.error {
+  color: var(--error_color);
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
