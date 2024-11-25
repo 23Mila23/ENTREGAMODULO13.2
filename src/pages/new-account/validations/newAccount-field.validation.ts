@@ -28,7 +28,7 @@ export const validateAccountAliasField = async (
   const accountsAlreadyCreated = await getAccountList().then((result) => {
     const vmAccountList = mapAccountListFromApiToVm(result);
     const isAliasRepeated = vmAccountList.find((account) => {
-      return value === account.name;
+      return value.toLowerCase() === account.name.toLowerCase();
     });
     return isAliasRepeated;
   });

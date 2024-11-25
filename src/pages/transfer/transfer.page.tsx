@@ -27,7 +27,7 @@ export const TransferPage: React.FC = () => {
       if (result) {
         alert("Transferencia realizada con éxito");
       } else {
-        ("Error al realizar la transferencia");
+        alert("Error al realizar la transferencia");
       }
     });
   };

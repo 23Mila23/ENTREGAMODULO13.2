@@ -8,7 +8,7 @@ describe("newAccount-form.validation specs", () => {
       //Arrange
       const newAccount: Account = {
         type: "1",
-        name: "test",
+        name: "prueba",
       };
 
       //Act
@@ -21,7 +21,7 @@ describe("newAccount-form.validation specs", () => {
       //Arrange
       const newAccount: Account = {
         type: "",
-        name: "test",
+        name: "prueba",
       };
       //Act
       const result = await validateNewAccountForm(newAccount);

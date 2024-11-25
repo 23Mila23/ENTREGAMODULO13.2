@@ -3,11 +3,18 @@ import React from "react";
 import { NewAccountFormComponent } from "./components/newAccount-form.component";
 import classes from "./newAccount.page.module.css";
 import { Account } from "./newAccount.vm";
+import { saveAccount } from "./api";
 
 export const NewAccount: React.FC = () => {
 
   const handleNewAccount = (newAccount : Account) => {
-    console.log(newAccount)
+    saveAccount(newAccount).then((result) => {
+      if(result) {
+        alert("Cuenta creada con éxito")
+      } else {
+        alert("Error al crear la cuenta")
+      }
+    })
   }
   return (
     <AppLayout>
