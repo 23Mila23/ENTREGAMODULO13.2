@@ -6,16 +6,15 @@ import { Account } from "./newAccount.vm";
 import { saveAccount } from "./api";
 
 export const NewAccount: React.FC = () => {
-
-  const handleNewAccount = (newAccount : Account) => {
+  const handleNewAccount = (newAccount: Account) => {
     saveAccount(newAccount).then((result) => {
-      if(result) {
-        alert("Cuenta creada con éxito")
+      if (result) {
+        alert("Cuenta creada con éxito");
       } else {
-        alert("Error al crear la cuenta")
+        alert("Error al crear la cuenta");
       }
-    })
-  }
+    });
+  };
   return (
     <AppLayout>
       <div className={classes.container}>

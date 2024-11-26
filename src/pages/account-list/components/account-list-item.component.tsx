@@ -56,6 +56,9 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
           <option value={ACTION_MOVEMENTS}>Movimientos</option>
         </select>
       </span>
+      <span className={classes.dataCell}>
+        <button>Eliminar</button>
+      </span>
     </div>
   );
 };

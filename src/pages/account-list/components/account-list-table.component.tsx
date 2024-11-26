@@ -20,6 +20,8 @@ export const AccountListTableComponent: React.FC<Props> = (props) => {
             <span className={classes.headerCell}>SALDO DISPONIBLE</span>
             <span className={classes.headerCell}>ÚLTIMA OPREACIÓN</span>
             <span className={classes.headerCell}>OPERACIÓN</span>
+            <span className={classes.headerCell}>ACCIONES</span>
+
           </div>
 
           {accountList.map((account) => (
