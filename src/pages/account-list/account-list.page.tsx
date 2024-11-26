@@ -24,7 +24,13 @@ export const AccountListPage: React.FC = () => {
   };
 
   const handleItemDeleted = (accountId: string) => {
-    deleteAccount(accountId);
+    deleteAccount(accountId).then(() => {
+      setAccountList(
+        accountList.filter((account) => {
+          return account.id !== accountId;
+        })
+      );
+    });
   };
 
   return (

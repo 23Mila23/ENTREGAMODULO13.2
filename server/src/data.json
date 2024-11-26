@@ -23,14 +23,6 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
-    },
-    {
-      "iban": "PS13 A965 4880 7035 4923 2948 5391 7",
-      "name": "test",
-      "type": "1",
-      "balance": 0,
-      "lastTransaction": "2024-11-26T11:04:52.748Z",
-      "id": "5hiJf4Y"
     }
   ],
   "movements": [
