@@ -8,14 +8,16 @@ import { useAccountDataContext } from "@/core/profile/account.context";
 const ACTION_NONE = "";
 const ACTION_TRANSFER = "1";
 const ACTION_MOVEMENTS = "2";
+
 interface Props {
   accountItem: AccountVm;
+  handleItemDeleted: (accountId: string) => void;
 }
 
 export const AccountListItemComponent: React.FC<Props> = (props) => {
-  const { accountItem } = props;
+  const { accountItem, handleItemDeleted } = props;
   const navigate = useNavigate();
-  const {setAccountData} = useAccountDataContext()
+  const { setAccountData } = useAccountDataContext();
 
   const handleSelectedOptionChange = (
     e: React.ChangeEvent<HTMLSelectElement>
@@ -27,11 +29,16 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
         );
         break;
       case ACTION_MOVEMENTS:
-        setAccountData(accountItem.iban, accountItem.balance, accountItem.id)
+        setAccountData(accountItem.iban, accountItem.balance, accountItem.id);
         navigate(generatePath(appRoutes.movements, { id: accountItem.id }));
         break;
     }
   };
+
+  const handleDeleteButtonOnClick = () => {
+    handleItemDeleted(accountItem.id);
+  };
+
   return (
     <div className={classes.row}>
       <span className={`${classes.dataCell} ${classes.bold}`}>
@@ -57,7 +64,7 @@ export const AccountListItemComponent: React.FC<Props> = (props) => {
         </select>
       </span>
       <span className={classes.dataCell}>
-        <button>Eliminar</button>
+        <button onClick={handleDeleteButtonOnClick}>Eliminar</button>
       </span>
     </div>
   );
